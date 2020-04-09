@@ -1,1 +1,1 @@
-from apps import appif __name__ == '__main__':    with app.app_context():        from apps.models import db        db.create_all()    app.run()
+from apps import appif __name__ == '__main__':    with app.app_context():        from apps.models import db        db.create_all()    app.run()"""版本1修改"""
