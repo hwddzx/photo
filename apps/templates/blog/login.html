@@ -1,0 +1,33 @@
+{% extends 'base/login_base.html' %}
+
+{% block title %}
+    登录
+{% endblock %}
+
+{% block body_header %}
+
+{% endblock %}
+
+{% block content %}
+    <div class="login_box">
+        <div class="login_l_img">
+            <img src="{{ url_for('static',filename='images/login-meiqiu.jpg') }}"/>
+        </div>
+        <div class="login" style="height:400px;">
+            <div class="login_logo"><img src="{{ url_for('static',filename='images/login-logo.png') }}"/></a>
+            </div>
+            <div class="login_name">
+                <p>登录</p>
+            </div>
+            <form action="" method="post" novalidate>
+
+                <input type="text" name="username" placeholder="账号" value="{{ form.username.data }}">
+
+                <input type="password" name="password" placeholder="密码">
+                <p class="text-danger">{{ form.error }}</p>
+                <input value="登录" type="submit">
+            </form>
+        </div>
+    </div>
+
+{% endblock %}

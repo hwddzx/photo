@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>
+        {% block title %}煤球与小羊羔的相册{% endblock %}
+    </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Muli:300,400,700|Playfair+Display:400,700,900" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{ url_for('static',filename='fonts/icomoon/style.css') }}">
+    {#    <link rel="stylesheet" href="{{ url_for('static',filename='css/bootstrap.min.css') }}">#}
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/magnific-popup.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/jquery-ui.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/owl.theme.default.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/bootstrap-datepicker.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='fonts/flaticon/font/flaticon.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/aos.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}">
+    {% block head_js %}
+
+    {% endblock %}
+
+    {% block head_css %}
+
+    {% endblock %}
+</head>
+<body>
+
+<div class="site-wrap">
+
+    <div class="site-mobile-menu">
+        <div class="site-mobile-menu-header">
+            <div class="site-mobile-menu-close mt-3">
+                <span class="icon-close2 js-menu-toggle"></span>
+            </div>
+        </div>
+        <div class="site-mobile-menu-body"></div>
+    </div>
+
+    <header class="site-navbar" role="banner">
+        <div class="container-fluid">
+            <div class="row align-items-center">
+
+                <div class="col-4 site-logo">
+                    <a href="{{ url_for('blog.index') }}" class="text-black h2 mb-0">煤球与小羊羔的相册</a>
+                </div>
+
+                <div class="col-8 text-right">
+                    <nav class="site-navigation" role="navigation">
+
+                        <ul class="site-menu js-clone-nav mr-auto d-none d-lg-block mb-0">
+                            <li><a href={{ url_for('blog.index') }}>主页</a></li>
+                            <li><a href={{ url_for('blog.category') }}>博客</a></li>
+                            <li><a href={{ url_for('blog.category') }}>相册</a></li>
+                            <li><a href={{ url_for('blog.category') }}>技术</a></li>
+                            <li><a href={{ url_for('blog.category') }}>旅行</a></li>
+                            <li><a href={{ url_for('blog.category') }}>运动</a></li>
+                            <li class="d-none d-lg-inline-block">
+                                <a href="" class="js-search-toggle">
+                                    <span class="icon-search"></span>
+                                </a>
+                            </li>
+                            {% if current_user.is_authenticated %}
+                                <li>
+                                    <a class="dropdown-toggle" type="button" id="dropdownMenuButton"
+                                       data-toggle="dropdown"
+                                       aria-haspopup="true" aria-expanded="false">
+                                        {{ current_user.name }}
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="#">个人资料</a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="{{ url_for('blog.logout') }}">退出登录</a>
+                                    </div>
+                                </li>
+                            {% endif %}
+
+                        </ul>
+                    </nav>
+
+                </div>
+            </div>
+
+        </div>
+    </header>
+
+    <div class="container">
+        {% if msg %}
+            {% for ms in msg %}
+                <div class="alert alert-success">
+                    <strong>{{ ms }}</strong>
+                </div>
+            {% endfor %}
+        {% endif %}
+    </div>
+    {% block content %}
+
+    {% endblock %}
+
+    <div class="site-footer">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-md-4">
+                    <h3 class="footer-heading mb-4">关于我们</h3>
+                    <p>哥哥:嘟哥</p>
+                    <p>姐姐:羊羊</p>
+                    <p>弟弟:煤球</p>
+                </div>
+                <div class="col-md-4 ml-auto">
+                    <h3 class="footer-heading mb-4">导航</h3>
+                    <ul class="list-unstyled float-left mr-5">
+                        <li><a href="#">关于我们</a></li>
+                        <li><a href="#">广告</a></li>
+                        <li><a href="#">经历</a></li>
+                        <li><a href="#">订阅</a></li>
+                    </ul>
+                    <ul class="list-unstyled float-left">
+                        <li><a href="#">旅行</a></li>
+                        <li><a href="#">生活方式</a></li>
+                        <li><a href="#">运动</a></li>
+                        <li><a href="#">自然</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <div>
+                        <a href="{{ url_for('blog.contact') }}">
+                            <h3 class="footer-heading mb-4">联系我们</h3>
+                            <p>+86 18380433380</p>
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p>煤球与小羊羔的相册 版权所有©2020-2020</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+{% block footer_js %}
+
+{% endblock %}
+<script src="{{ url_for('static',filename='js/jquery-3.3.1.min.js') }}"></script>
+<script src="{{ url_for('static',filename='js/jquery-migrate-3.0.1.min.js') }}"></script>
+<script src="{{ url_for('static',filename='js/jquery-ui.js') }}"></script>
+<script src="{{ url_for('static',filename='js/popper.min.js') }}"></script>
+<script src="{{ url_for('static',filename='js/bootstrap.min.js') }}"></script>
+<script src="{{ url_for('static',filename='js/owl.carousel.min.js') }}"></script>
+<script src="{{ url_for('static',filename='js/jquery.stellar.min.js') }}"></script>
+<script src="{{ url_for('static',filename='js/jquery.countdown.min.js') }}"></script>
+<script src="{{ url_for('static',filename='js/jquery.magnific-popup.min.js') }}"></script>
+<script src="{{ url_for('static',filename='js/bootstrap-datepicker.min.js') }}"></script>
+<script src="{{ url_for('static',filename='js/aos.js') }}"></script>
+<script src="{{ url_for('static',filename='js/main.js') }}"></script>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>
+        {% block title %}
+
+        {% endblock %}
+    </title>
+    <link href="{{ url_for('static',filename='css/bootstrap.min.css') }}" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/common.css') }}"/>
+    <script src="{{ url_for('static',filename='js/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/bootstrap.min.js') }}"></script>
+    <link href="{{ url_for('static',filename='css/login.css') }}" rel="stylesheet" type="text/css"/>
+    {% block head_js %}
+
+    {% endblock %}
+
+    {% block head_css %}
+
+    {% endblock %}
+</head>
+
+<body>
+
+{% block content %}
+
+{% endblock %}
+
+{% block footer %}
+    <div class="copyright" style="bottom:0;position: fixed">嘟狗科技有限公司 版权所有©2016-2019</div>
+{% endblock %}
+
+{% block footer_js %}
+
+{% endblock %}
+
+</body>
+</html>

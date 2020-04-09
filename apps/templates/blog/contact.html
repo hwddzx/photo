@@ -1,0 +1,87 @@
+{% extends 'base/base.html' %}
+
+
+{% block content %}
+    <div class="site-cover site-cover-sm same-height overlay single-page"
+         style="background-image: url({{ url_for('static', filename='images/img_4.jpg') }});">
+        <div class="container">
+            <div class="row same-height justify-content-center">
+                <div class="col-md-12 col-lg-10">
+                    <div class="post-entry text-center">
+                        <h1 class="">联系我们</h1>
+                        <p class="lead mb-4 text-white">小朋友，你是否有很多问号?</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="site-section bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-7 mb-5">
+
+
+                    <form action="#" class="p-5 bg-white">
+
+
+                        <div class="row form-group">
+                            <div class="col-md-12">
+                                <label class="text-black" for="name">姓名</label>
+                                <input type="text" id="name" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="row form-group">
+
+                            <div class="col-md-12">
+                                <label class="text-black" for="email">邮箱</label>
+                                <input type="email" id="email" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="row form-group">
+
+                            <div class="col-md-12">
+                                <label class="text-black" for="subject">项目</label>
+                                <input type="text" id="subject" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="row form-group">
+                            <div class="col-md-12">
+                                <label class="text-black" for="message">详情信息</label>
+                                <textarea name="message" id="message" cols="30" rows="7" class="form-control"
+                                          placeholder="在这里写下你的问题..."></textarea>
+                            </div>
+                        </div>
+
+                        <div class="row form-group">
+                            <div class="col-md-12">
+                                <input type="submit" value="发送信息" class="btn btn-primary py-2 px-4 text-white">
+                            </div>
+                        </div>
+
+
+                    </form>
+                </div>
+                <div class="col-md-5">
+
+                    <div class="p-4 mb-3 bg-white">
+                        <p class="mb-0 font-weight-bold">地址</p>
+                        <p class="mb-4">四川省成都市高新区节能大厦A座401</p>
+
+                        <p class="mb-0 font-weight-bold">电话</p>
+                        <p class="mb-4 contact">+86 18380433380</p>
+
+                        <p class="mb-0 font-weight-bold">邮箱</p>
+                        <p class="mb-0 contact">775984360@qq.com</p>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
